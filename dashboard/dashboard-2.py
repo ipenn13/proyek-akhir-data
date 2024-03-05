@@ -56,10 +56,10 @@ with col3:
 st.subheader("Total Renters by Season")
 sum_season_df = day_df.groupby(by='season').agg({'dteday':'nunique', 'cnt': 'sum'})
 
-# Buat plot
+# Membuat visualisasi untuk jumlah penyewa berdasarkan musim
 fig1, ax1 = plt.subplots(figsize=(21, 7))
 sns.barplot(x="season", y="cnt", data=sum_season_df, ax=ax1)
-
+plt.title("Jumlah Penyewa Berdasarkan Musim")
 ax1.set_ylabel(None)
 ax1.set_ylim(400000, 1100000)
 ax1.yaxis.set_major_formatter('{x:,.0f}')
